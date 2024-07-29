@@ -25,7 +25,7 @@ layout: default
       <div class="row">
         {% for f_row in page.feature_rows %}
         <!-- TODO use animate.css to animate on hover -->
-        <div class="col-md-4 p-0">
+        <div class="col-md-4 p-0" style="Display:flex">
           <div class="card border-0 m-3">
             {% if f_row.img_path %}
               {% capture img_path %}
@@ -45,13 +45,13 @@ layout: default
               {% endif %}
             </div>
 
-            <div class="card-body bg-light border border-light border-top-0 rounded-bottom">
+            <div class="card-body bg-light border border-light border-top-0 rounded-bottom" style="Align-items: stretch">
               <a href="{{ f_row.url | relative_url }}">
                 <h2 class="m-0">
-                  {{ f_row.title | strip | strip_html | strip_newlines | truncate: 10 }}
+                  {{ f_row.title | strip | strip_html | strip_newlines | truncate: 15 }}
                 </h2>
               </a>
-              <p class="card-text">{{ f_row.excerpt | strip | strip_html | strip_newlines | truncate: 200 }}</p>
+              <p class="card-text">{{ f_row.excerpt }}</p>
             </div>
           </div>
         </div>
