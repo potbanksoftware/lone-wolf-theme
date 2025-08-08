@@ -17,6 +17,10 @@
         </ul>
       </div>
     {% endfor %}
+  {%- else if list_type == "pages" -%}
+    {% for page in list_items %}
+        {% include archive-single.html item=page %}
+    {% endfor %}
   {%- else -%}
     {% assign taxonomies = list_items %}
     {% for taxonomy in taxonomies %}
